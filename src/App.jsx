@@ -6,7 +6,27 @@ import Services from './pages/Services'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import { StateRouter, CityRouter, ServiceStateRouter, ServiceCityRouter } from './components/DynamicRouter'
+import StateRedirect from './components/StateRedirect'
 import './App.css'
+
+// Componente para lidar com redirecionamentos de siglas
+const StateRouterWithRedirect = () => {
+  return (
+    <>
+      <StateRedirect />
+      <StateRouter />
+    </>
+  )
+}
+
+const CityRouterWithRedirect = () => {
+  return (
+    <>
+      <StateRedirect />
+      <CityRouter />
+    </>
+  )
+}
 
 function App() {
   return (
@@ -22,11 +42,11 @@ function App() {
             <Route path="/sobrenos" element={<About />} />
             <Route path="/contato" element={<Contact />} />
             
-            {/* Rotas dinâmicas para estados */}
-            <Route path="/:estado" element={<StateRouter />} />
+            {/* Rotas dinâmicas para estados (com redirecionamento de siglas) */}
+            <Route path="/:estado" element={<StateRouterWithRedirect />} />
             
-            {/* Rotas dinâmicas para municípios */}
-            <Route path="/:estado/:municipio" element={<CityRouter />} />
+            {/* Rotas dinâmicas para municípios (com redirecionamento de siglas) */}
+            <Route path="/:estado/:municipio" element={<CityRouterWithRedirect />} />
             
             {/* Rotas de serviços por estado */}
             <Route path="/servicos/:estado" element={<ServiceStateRouter />} />
