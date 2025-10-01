@@ -1,12 +1,9 @@
 nohup: ignoring input
 
 > guiadevan-site@0.0.0 preview
-> vite preview --host
+> vite preview 0.0.0.0
 
-Port 4173 is in use, trying another one...
-Port 4174 is in use, trying another one...
-Port 4175 is in use, trying another one...
-Port 4176 is in use, trying another one...
-Port 4177 is in use, trying another one...
-  ➜  Local:   http://localhost:4178/
-  ➜  Network: http://169.254.0.21:4178/
+error when starting preview server:
+Error: The directory "dist" does not exist. Did you build your project?
+    at preview (file:///home/ubuntu/guiadevan-site/node_modules/.pnpm/vite@6.3.5_jiti@2.4.2_lightningcss@1.30.1_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:48217:11)
+    at async CAC.<anonymous> (file:///home/ubuntu/guiadevan-site/node_modules/.pnpm/vite@6.3.5_jiti@2.4.2_lightningcss@1.30.1_yaml@2.8.1/node_modules/vite/dist/node/cli.js:914:22)

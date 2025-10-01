@@ -5,6 +5,8 @@ import Home from './pages/Home'
 import Services from './pages/Services'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import Blog from './pages/Blog'
+import BlogPost from './pages/BlogPost'
 import { StateRouter, CityRouter, ServiceStateRouter, ServiceCityRouter } from './components/DynamicRouter'
 import StateRedirect from './components/StateRedirect'
 import './App.css'
@@ -41,6 +43,8 @@ function App() {
             <Route path="/servicos" element={<Services />} />
             <Route path="/sobrenos" element={<About />} />
             <Route path="/contato" element={<Contact />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             
             {/* Rotas dinâmicas para estados (com redirecionamento de siglas) */}
             <Route path="/:estado" element={<StateRouterWithRedirect />} />

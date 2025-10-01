@@ -15,7 +15,8 @@ const Header = () => {
     { name: 'Início', path: '/inicio' },
     { name: 'Serviços', path: '/servicos' },
     { name: 'Sobre Nós', path: '/sobrenos' },
-    { name: 'Contato', path: '/contato' }
+    { name: 'Contato', path: '/contato' },
+    { name: 'Blog', path: '/blog' }
   ]
 
   const socialLinks = [
