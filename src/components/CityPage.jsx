@@ -1,9 +1,9 @@
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { CheckCircle, Clock, Shield, DollarSign, Phone, Mail, MapPin } from 'lucide-react'
-import vanExecutiva from '../assets/van-executiva.png'
-import vanAmbulancia from '../assets/van-ambulancia.png'
-import vanMotorhome from '../assets/van-motorhome.png'
+import vanExecutiva from '../assets/van-executiva-transparent.png'
+import vanAmbulancia from '../assets/van-ambulancia-transparent.png'
+import vanMotorhome from '../assets/van-motorhome-transparent.png'
 
 const CityPage = ({ cidade, estado, nomeEstado }) => {
   const services = [
