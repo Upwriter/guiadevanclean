@@ -48,7 +48,7 @@ Para **uso intensivo**, a Iveco Daily se destaca pela durabilidade e robustez, c
 ## Conclusão
 
 A escolha da melhor van executiva para 2025 depende do perfil de uso e orçamento disponível. Todas as opções analisadas atendem aos padrões de qualidade exigidos pelo mercado, diferindo principalmente em tecnologia, acabamento e preço.`,
-    image: '/src/assets/van-executiva.png',
+    image: '/src/assets/van-executiva-transparent.png',
     author: 'Abraão Correa',
     publishDate: '2024-12-15',
     readTime: '8 min',
@@ -89,7 +89,7 @@ Bancos oferecem financiamento específico para veículos comerciais com taxas en
 ## Conclusão
 
 O investimento em uma van executiva nova varia de R$ 200.000 a R$ 500.000, dependendo das especificações desejadas. Considere sempre o custo total de propriedade, incluindo manutenção, seguro e depreciação.`,
-    image: '/src/assets/van-executiva.png',
+    image: '/src/assets/van-executiva-transparent.png',
     author: 'Abraão Correa',
     publishDate: '2024-12-14',
     readTime: '6 min',
@@ -149,7 +149,7 @@ Garantia de fábrica pode estar vencida ou próxima do vencimento.
 ## Conclusão
 
 A compra de van executiva usada pode ser vantajosa quando feita com critério e cuidado. A economia inicial deve ser balanceada com possíveis custos de manutenção e reparos.`,
-    image: '/src/assets/van-executiva.png',
+    image: '/src/assets/van-executiva-transparent.png',
     author: 'Abraão Correa',
     publishDate: '2024-12-13',
     readTime: '7 min',
@@ -220,7 +220,7 @@ Sistema multimídia com telas individuais, Wi-Fi e carregadores USB são diferen
 ## Conclusão
 
 A Mercedes-Benz Sprinter Executive lidera em conforto, mas modelos como Renault Master oferecem excelente custo-benefício. A escolha deve considerar orçamento e nível de exigência dos passageiros.`,
-    image: '/src/assets/van-executiva.png',
+    image: '/src/assets/van-executiva-transparent.png',
     author: 'Abraão Correa',
     publishDate: '2024-12-12',
     readTime: '9 min',
@@ -341,7 +341,7 @@ Test drive superficial pode ocultar problemas.
 ## Conclusão
 
 A escolha da van executiva ideal requer análise cuidadosa de múltiplos fatores. Defina claramente suas necessidades, compare opções disponíveis e considere sempre o custo total de propriedade. Investimento adequado na escolha inicial evita problemas futuros e garante satisfação dos clientes.`,
-    image: '/src/assets/van-executiva.png',
+    image: '/src/assets/van-executiva-transparent.png',
     author: 'Abraão Correa',
     publishDate: '2024-12-11',
     readTime: '10 min',

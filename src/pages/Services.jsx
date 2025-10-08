@@ -1,314 +1,300 @@
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { CheckCircle, Truck, Heart, Home, Building, Users, Shield, Wrench } from 'lucide-react'
-import vanExecutiva from '../assets/van-executiva.png'
-import vanAmbulancia from '../assets/van-ambulancia.png'
-import vanMotorhome from '../assets/van-motorhome.png'
+import React from 'react';
+import { Phone, CheckCircle, ArrowRight, Users, Truck, Heart, Home } from 'lucide-react';
 
 const Services = () => {
-  const mainServices = [
-    {
-      icon: <Truck className="w-12 h-12 text-blue-600" />,
-      title: "Vans Executivas",
-      description: "Vans de luxo para transporte executivo, corporativo e turismo. Conforto e elegância para seus clientes mais exigentes.",
-      image: vanExecutiva,
-      features: [
-        "Ar condicionado dual zone",
-        "Bancos de couro premium",
-        "Sistema de som ambiente",
-        "Wi-Fi e tomadas USB",
-        "Iluminação LED interna",
-        "Vidros escuros",
-        "Piso antiderrapante",
-        "Capacidade para 15-20 passageiros"
-      ],
-      applications: [
-        "Transporte executivo",
-        "Turismo corporativo",
-        "Eventos empresariais",
-        "Transfers aeroporto",
-        "Excursões"
-      ]
-    },
-    {
-      icon: <Heart className="w-12 h-12 text-red-600" />,
-      title: "Ambulâncias",
-      description: "Ambulâncias totalmente equipadas para pronta entrega. Atendemos hospitais, clínicas, prefeituras e serviços de emergência.",
-      image: vanAmbulancia,
-      features: [
-        "Equipamentos médicos completos",
-        "Maca retrátil com rodas",
-        "Sistema de oxigênio",
-        "Desfibrilador",
-        "Monitor cardíaco",
-        "Suporte para soro",
-        "Iluminação cirúrgica",
-        "Sirene e giroflex"
-      ],
-      applications: [
-        "Hospitais e clínicas",
-        "Prefeituras municipais",
-        "Bombeiros",
-        "Serviços de emergência",
-        "Eventos médicos"
-      ]
-    },
-    {
-      icon: <Home className="w-12 h-12 text-green-600" />,
-      title: "Vans para Motorhome",
-      description: "Vans preparadas especialmente para conversão em motorhome. Base perfeita para realizar o sonho da casa sobre rodas.",
-      image: vanMotorhome,
-      features: [
-        "Estrutura reforçada",
-        "Instalação elétrica 12V/220V",
-        "Isolamento térmico e acústico",
-        "Janelas especiais",
-        "Teto solar opcional",
-        "Piso preparado",
-        "Ventilação adequada",
-        "Suporte para equipamentos"
-      ],
-      applications: [
-        "Motorhome familiar",
-        "Viagens de longa distância",
-        "Camping e aventura",
-        "Trabalho itinerante",
-        "Turismo sustentável"
-      ]
-    }
-  ]
-
-  const additionalServices = [
-    {
-      icon: <Building className="w-8 h-8 text-blue-600" />,
-      title: "Vans Corporativas",
-      description: "Soluções personalizadas para empresas que precisam de transporte regular de funcionários ou clientes."
-    },
-    {
-      icon: <Users className="w-8 h-8 text-blue-600" />,
-      title: "Vans para Turismo",
-      description: "Veículos especialmente preparados para agências de turismo e operadoras de viagem."
-    },
-    {
-      icon: <Shield className="w-8 h-8 text-blue-600" />,
-      title: "Vans Blindadas",
-      description: "Vans com blindagem para transporte de valores e pessoas que necessitam de segurança especial."
-    },
-    {
-      icon: <Wrench className="w-8 h-8 text-blue-600" />,
-      title: "Customização",
-      description: "Adaptações e customizações especiais conforme a necessidade específica do cliente."
-    }
-  ]
-
-  const processSteps = [
-    {
-      step: "1",
-      title: "Consulta Inicial",
-      description: "Entre em contato conosco e conte suas necessidades. Nossa equipe fará uma análise detalhada do seu projeto."
-    },
-    {
-      step: "2", 
-      title: "Orçamento Personalizado",
-      description: "Elaboramos um orçamento detalhado com todas as especificações e prazos de entrega."
-    },
-    {
-      step: "3",
-      title: "Produção/Preparação",
-      description: "Iniciamos a preparação ou customização da van conforme suas especificações."
-    },
-    {
-      step: "4",
-      title: "Entrega",
-      description: "Entregamos sua van pronta para uso, com toda documentação e garantia."
-    }
-  ]
-
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Nossos Serviços
-          </h1>
-          <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
-            Oferecemos uma ampla gama de vans especializadas para atender às mais diversas necessidades. 
-            Qualidade, confiabilidade e atendimento personalizado em todo o Brasil.
-          </p>
-          <Button 
-            asChild
-            size="lg"
-            className="bg-red-500 hover:bg-red-600 text-white px-8 py-4 text-lg font-semibold"
-          >
-            <a href="https://wa.link/8sjwum" target="_blank" rel="noopener noreferrer">
-              Solicitar Orçamento
-            </a>
-          </Button>
-        </div>
-      </section>
-
-      {/* Main Services */}
-      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Principais Serviços</h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Especializamos em três principais categorias de vans, cada uma com equipamentos 
-              e características específicas para atender perfeitamente sua necessidade.
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              Serviços e Orientação para Quem Quer Comprar uma Van
+            </h1>
+            <p className="text-xl text-blue-100 mb-8 max-w-4xl mx-auto leading-relaxed">
+              No Guia de Van, nosso foco é ajudar você a entender o mercado, comparar modelos e descobrir onde comprar com segurança. Atendemos clientes de todo o Brasil que buscam vans executivas, ambulâncias e vans para motorhome.
             </p>
           </div>
+        </div>
+      </section>
 
-          <div className="space-y-16">
-            {mainServices.map((service, index) => (
-              <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-                <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                  <div className="flex items-center mb-6">
-                    {service.icon}
-                    <h3 className="text-3xl font-bold text-gray-900 ml-4">{service.title}</h3>
-                  </div>
-                  <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                    {service.description}
-                  </p>
-                  
-                  <div className="mb-6">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3">Características:</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                      {service.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center">
-                          <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                          <span className="text-gray-700">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="mb-8">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3">Aplicações:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {service.applications.map((app, idx) => (
-                        <span key={idx} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                          {app}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <Button 
-                    asChild
-                    className="bg-blue-600 hover:bg-blue-700 text-white"
-                  >
-                    <a href="https://wa.link/8sjwum" target="_blank" rel="noopener noreferrer">
-                      Solicitar Informações
-                    </a>
-                  </Button>
-                </div>
-                
-                <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="rounded-lg shadow-xl w-full"
-                  />
-                </div>
+      {/* Serviços Principais */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            {/* Vans Executivas */}
+            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                <Users className="h-8 w-8 text-blue-600" />
               </div>
-            ))}
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Vans Executivas
+              </h3>
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                Ideal para transporte de passageiros, empresas e turismo. Nós mostramos <strong>onde encontrar vans executivas novas e seminovas</strong> com o melhor custo-benefício e garantias reais.
+              </p>
+              <div className="mb-6">
+                <img 
+                  src="/src/assets/van-executiva-transparent.png" 
+                  alt="Vans Executivas"
+                  className="w-full h-40 object-contain rounded-lg"
+                  style={{ 
+                    filter: 'drop-shadow(0 10px 25px rgba(0, 0, 0, 0.1))',
+                    background: 'transparent'
+                  }}
+                />
+              </div>
+              <a 
+                href="https://wa.link/8sjwum"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold inline-flex items-center"
+              >
+                <Phone className="mr-2 h-4 w-4" />
+                Consultar Vans Executivas
+              </a>
+            </div>
+
+            {/* Ambulâncias */}
+            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+                <Heart className="h-8 w-8 text-red-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Ambulâncias
+              </h3>
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                Ajudamos você a encontrar <strong>ambulâncias prontas para uso</strong> e veículos adaptados de acordo com a legislação. Saiba onde comprar de forma segura e com documentação atualizada.
+              </p>
+              <div className="mb-6">
+                <img 
+                  src="/src/assets/van-ambulancia-transparent.png" 
+                  alt="Ambulâncias"
+                  className="w-full h-40 object-contain rounded-lg"
+                  style={{ 
+                    filter: 'drop-shadow(0 10px 25px rgba(0, 0, 0, 0.1))',
+                    background: 'transparent'
+                  }}
+                />
+              </div>
+              <a 
+                href="https://wa.link/8sjwum"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors font-semibold inline-flex items-center"
+              >
+                <Phone className="mr-2 h-4 w-4" />
+                Consultar Ambulâncias
+              </a>
+            </div>
+
+            {/* Vans para Motorhome */}
+            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                <Home className="h-8 w-8 text-green-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Vans para Motorhome
+              </h3>
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                Sonha em ter um motorhome? Apresentamos <strong>modelos preparados para conversão</strong> e orientamos você sobre fornecedores especializados e processos de legalização.
+              </p>
+              <div className="mb-6">
+                <img 
+                  src="/src/assets/van-motorhome-transparent.png" 
+                  alt="Vans para Motorhome"
+                  className="w-full h-40 object-contain rounded-lg"
+                  style={{ 
+                    filter: 'drop-shadow(0 10px 25px rgba(0, 0, 0, 0.1))',
+                    background: 'transparent'
+                  }}
+                />
+              </div>
+              <a 
+                href="https://wa.link/8sjwum"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-semibold inline-flex items-center"
+              >
+                <Phone className="mr-2 h-4 w-4" />
+                Consultar Motorhomes
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Additional Services */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Serviços Adicionais</h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Além dos nossos principais serviços, oferecemos soluções especializadas 
-              para necessidades específicas de diversos segmentos.
+      {/* Como Funciona */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Como Funciona
+            </h2>
+            <p className="text-xl text-gray-600">
+              Processo simples e transparente para encontrar sua van ideal
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {additionalServices.map((service, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
-                <CardHeader>
-                  <div className="flex justify-center mb-4">
-                    {service.icon}
-                  </div>
-                  <CardTitle className="text-lg">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">{service.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Como Funciona</h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Nosso processo é simples e transparente. Desde o primeiro contato até a entrega, 
-              você terá acompanhamento completo de todas as etapas.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <div key={index} className="text-center">
-                <div className="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                  {step.step}
-                </div>
-                <h3 className="text-lg font-semibold mb-3">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-blue-600">1</span>
               </div>
-            ))}
+              <h3 className="text-lg font-bold text-gray-900 mb-3">
+                Você nos conta o que procura
+              </h3>
+              <p className="text-gray-600">
+                Conte-nos suas necessidades, orçamento e preferências
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-green-600">2</span>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">
+                Nós analisamos o seu caso e indicamos as melhores opções
+              </h3>
+              <p className="text-gray-600">
+                Nossa equipe analisa e seleciona as melhores oportunidades
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-yellow-600">3</span>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">
+                Você recebe contatos de revendas e consultores confiáveis
+              </h3>
+              <p className="text-gray-600">
+                Conectamos você com parceiros verificados e confiáveis
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-purple-600">4</span>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">
+                Negocia diretamente com segurança
+              </h3>
+              <p className="text-gray-600">
+                Você negocia diretamente com total segurança e transparência
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-blue-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            Pronto para Adquirir sua Van?
+      {/* Call to Action */}
+      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Quer ajuda para encontrar sua van ideal?
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Nossa equipe especializada está pronta para ajudar você a encontrar a van perfeita 
-            para suas necessidades. Entre em contato agora e receba um orçamento personalizado.
+          <p className="text-xl text-blue-100 mb-8 leading-relaxed">
+            👉 Fale com nossa equipe e receba uma indicação personalizada.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              asChild
-              size="lg"
-              className="bg-red-500 hover:bg-red-600 text-white px-8 py-4 text-lg font-semibold"
+            <a 
+              href="https://wa.link/8sjwum"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-green-500 text-white px-8 py-4 rounded-lg hover:bg-green-600 transition-colors font-bold text-lg inline-flex items-center justify-center"
             >
-              <a href="https://wa.link/8sjwum" target="_blank" rel="noopener noreferrer">
-                Falar no WhatsApp
-              </a>
-            </Button>
-            <Button 
-              asChild
-              size="lg"
-              variant="outline"
-              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold"
+              <Phone className="mr-2 h-5 w-5" />
+              Falar com Especialista
+            </a>
+            <a 
+              href="https://wa.link/8sjwum"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-50 transition-colors font-bold text-lg inline-flex items-center justify-center"
             >
-              <a href="mailto:contato@guiadevan.com.br">
-                Enviar E-mail
-              </a>
-            </Button>
+              Solicitar Orçamento
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefícios */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Por que escolher o Guia de Van?
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <CheckCircle className="h-8 w-8 text-green-500 mb-4" />
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                Orientação Especializada
+              </h3>
+              <p className="text-gray-600">
+                Equipe experiente para orientar na melhor escolha conforme suas necessidades
+              </p>
+            </div>
+
+            <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <CheckCircle className="h-8 w-8 text-green-500 mb-4" />
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                Parceiros Confiáveis
+              </h3>
+              <p className="text-gray-600">
+                Rede de revendas e consultores verificados em todo o Brasil
+              </p>
+            </div>
+
+            <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <CheckCircle className="h-8 w-8 text-green-500 mb-4" />
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                Atendimento Gratuito
+              </h3>
+              <p className="text-gray-600">
+                Consultoria e orientação sem custos para encontrar sua van ideal
+              </p>
+            </div>
+
+            <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <CheckCircle className="h-8 w-8 text-green-500 mb-4" />
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                Cobertura Nacional
+              </h3>
+              <p className="text-gray-600">
+                Atendemos todas as cidades e estados do Brasil
+              </p>
+            </div>
+
+            <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <CheckCircle className="h-8 w-8 text-green-500 mb-4" />
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                Transparência Total
+              </h3>
+              <p className="text-gray-600">
+                Processo transparente sem taxas ocultas ou surpresas
+              </p>
+            </div>
+
+            <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <CheckCircle className="h-8 w-8 text-green-500 mb-4" />
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                Suporte Contínuo
+              </h3>
+              <p className="text-gray-600">
+                Acompanhamento durante todo o processo de compra
+              </p>
+            </div>
           </div>
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Services
+export default Services;

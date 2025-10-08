@@ -1,379 +1,332 @@
-import { useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea'
-import { Label } from '@/components/ui/label'
-import { Phone, Mail, MapPin, Clock, MessageCircle, Send, CheckCircle } from 'lucide-react'
+import React from 'react';
+import { Phone, Mail, MapPin, Clock, MessageCircle, CheckCircle } from 'lucide-react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
-  })
-
-  const contactMethods = [
-    {
-      icon: <Phone className="w-8 h-8 text-blue-600" />,
-      title: "Telefone e WhatsApp",
-      description: "Atendimento direto e rápido",
-      info: "Disponível 24 horas",
-      action: "Falar Agora",
-      link: "https://wa.link/8sjwum",
-      highlight: true
-    },
-    {
-      icon: <Mail className="w-8 h-8 text-blue-600" />,
-      title: "E-mail",
-      description: "Envie sua mensagem detalhada",
-      info: "contato@guiadevan.com.br",
-      action: "Enviar E-mail",
-      link: "mailto:contato@guiadevan.com.br"
-    },
-    {
-      icon: <MapPin className="w-8 h-8 text-blue-600" />,
-      title: "Atendimento Nacional",
-      description: "Presença em todo o Brasil",
-      info: "Todos os estados brasileiros",
-      action: "Consultar Região",
-      link: "https://wa.link/8sjwum"
-    }
-  ]
-
-  const businessHours = [
-    { day: "Segunda a Sexta", hours: "08:00 - 18:00" },
-    { day: "Sábado", hours: "08:00 - 12:00" },
-    { day: "Domingo", hours: "Plantão WhatsApp" }
-  ]
-
-  const faqs = [
-    {
-      question: "Vocês atendem em todo o Brasil?",
-      answer: "Sim! Atendemos todos os estados brasileiros com entrega em qualquer cidade do país."
-    },
-    {
-      question: "Qual o prazo de entrega das vans?",
-      answer: "O prazo varia conforme o tipo de van e customizações. Geralmente entre 15 a 45 dias úteis."
-    },
-    {
-      question: "Oferecem financiamento?",
-      answer: "Sim, trabalhamos com diversas modalidades de financiamento e condições especiais."
-    },
-    {
-      question: "As vans têm garantia?",
-      answer: "Todas as nossas vans contam com garantia completa e suporte técnico especializado."
-    }
-  ]
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // Criar mensagem para WhatsApp
-    const message = `Olá! Vim do site GuiaDeVan.
-    
-Nome: ${formData.name}
-E-mail: ${formData.email}
-Telefone: ${formData.phone}
-Assunto: ${formData.subject}
-
-Mensagem: ${formData.message}`
-    
-    const whatsappUrl = `https://wa.link/8sjwum?text=${encodeURIComponent(message)}`
-    window.open(whatsappUrl, '_blank')
-  }
-
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Entre em Contato
-          </h1>
-          <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
-            Estamos prontos para atender você! Entre em contato conosco e descubra 
-            como podemos ajudar com a van ideal para suas necessidades.
-          </p>
-          <Button 
-            asChild
-            size="lg"
-            className="bg-red-500 hover:bg-red-600 text-white px-8 py-4 text-lg font-semibold"
-          >
-            <a href="https://wa.link/8sjwum" target="_blank" rel="noopener noreferrer">
-              <MessageCircle className="w-5 h-5 mr-2" />
-              Falar no WhatsApp
-            </a>
-          </Button>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              Entre em Contato com o Guia de Van
+            </h1>
+            <p className="text-xl text-blue-100 mb-8 max-w-4xl mx-auto leading-relaxed">
+              Fale com nossa equipe e receba orientação gratuita sobre como encontrar a van ideal em sua cidade.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Contact Methods */}
-      <section className="py-16">
+      {/* Informações de Contato */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Como Falar Conosco</h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Escolha a forma de contato que for mais conveniente para você. 
-              Nossa equipe está sempre pronta para atendê-lo.
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Como Podemos Ajudar Você?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Nosso time está pronto para ajudar você a <strong>encontrar as melhores opções de vans e ambulâncias em todo o Brasil</strong>. Não fazemos venda direta — nosso foco é orientar e indicar o melhor caminho para uma compra segura.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {contactMethods.map((method, index) => (
-              <Card key={index} className={`text-center hover:shadow-lg transition-all duration-300 ${method.highlight ? 'ring-2 ring-green-500 bg-green-50' : ''}`}>
-                <CardHeader>
-                  <div className="flex justify-center mb-4">
-                    {method.icon}
-                  </div>
-                  <CardTitle className="text-lg">{method.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 mb-2">{method.description}</p>
-                  <p className="text-sm text-gray-500 mb-4">{method.info}</p>
-                  <Button 
-                    asChild
-                    className={method.highlight ? "bg-green-500 hover:bg-green-600" : "bg-blue-600 hover:bg-blue-700"}
-                  >
-                    <a href={method.link} target="_blank" rel="noopener noreferrer">
-                      {method.action}
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {/* WhatsApp */}
+            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-8 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-6">
+                <MessageCircle className="h-8 w-8 text-green-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                WhatsApp e Telefone
+              </h3>
+              <p className="text-gray-700 mb-6">
+                Atendimento rápido e humanizado
+              </p>
+              <a 
+                href="https://wa.link/8sjwum"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors font-semibold inline-flex items-center"
+              >
+                <Phone className="mr-2 h-4 w-4" />
+                Falar no WhatsApp
+              </a>
+            </div>
+
+            {/* E-mail */}
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-6">
+                <Mail className="h-8 w-8 text-blue-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                E-mail
+              </h3>
+              <p className="text-gray-700 mb-6">
+                Respostas em até 2 horas úteis
+              </p>
+              <a 
+                href="mailto:contato@guiadevan.com.br"
+                className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold inline-flex items-center"
+              >
+                <Mail className="mr-2 h-4 w-4" />
+                Enviar E-mail
+              </a>
+            </div>
+
+            {/* Cobertura */}
+            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-8 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-6">
+                <MapPin className="h-8 w-8 text-purple-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Cobertura Nacional
+              </h3>
+              <p className="text-gray-700 mb-6">
+                Conectamos compradores a revendas em todos os estados
+              </p>
+              <a 
+                href="https://wa.link/8sjwum"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors font-semibold inline-flex items-center"
+              >
+                <MapPin className="mr-2 h-4 w-4" />
+                Consultar Região
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Form and Info */}
-      <section className="py-16 bg-gray-50">
+      {/* Call to Action Principal */}
+      <section className="py-20 bg-blue-600 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Precisa de ajuda agora?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8 leading-relaxed">
+            👉 Fale com um especialista do Guia de Van.
+          </p>
+          <a 
+            href="https://wa.link/8sjwum"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-green-500 text-white px-8 py-4 rounded-lg hover:bg-green-600 transition-colors font-bold text-lg inline-flex items-center"
+          >
+            <Phone className="mr-2 h-5 w-5" />
+            Falar com Especialista Agora
+          </a>
+        </div>
+      </section>
+
+      {/* Horários e Informações */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Envie sua Mensagem</h2>
-              <p className="text-gray-600 mb-8">
-                Preencha o formulário abaixo e nossa equipe entrará em contato o mais breve possível.
-              </p>
+            
+            {/* Horários de Atendimento */}
+            <div className="bg-white rounded-xl p-8 shadow-lg">
+              <div className="flex items-center mb-6">
+                <Clock className="h-8 w-8 text-blue-600 mr-3" />
+                <h3 className="text-2xl font-bold text-gray-900">
+                  Horários de Atendimento
+                </h3>
+              </div>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="name">Nome Completo *</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder="Seu nome completo"
-                      className="mt-1"
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="phone">Telefone *</Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      required
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder="(11) 99999-9999"
-                      className="mt-1"
-                    />
-                  </div>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center py-3 border-b border-gray-200">
+                  <span className="font-semibold text-gray-900">Segunda a Sexta</span>
+                  <span className="text-gray-600">8h às 18h</span>
                 </div>
-
-                <div>
-                  <Label htmlFor="email">E-mail *</Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder="seu@email.com"
-                    className="mt-1"
-                  />
+                <div className="flex justify-between items-center py-3 border-b border-gray-200">
+                  <span className="font-semibold text-gray-900">Sábado</span>
+                  <span className="text-gray-600">8h às 14h</span>
                 </div>
-
-                <div>
-                  <Label htmlFor="subject">Assunto *</Label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    type="text"
-                    required
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    placeholder="Ex: Orçamento para van executiva"
-                    className="mt-1"
-                  />
+                <div className="flex justify-between items-center py-3 border-b border-gray-200">
+                  <span className="font-semibold text-gray-900">Domingo</span>
+                  <span className="text-gray-600">Plantão WhatsApp</span>
                 </div>
-
-                <div>
-                  <Label htmlFor="message">Mensagem *</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    required
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder="Descreva suas necessidades, tipo de van desejada, quantidade, prazo, etc."
-                    rows={5}
-                    className="mt-1"
-                  />
+                <div className="flex justify-between items-center py-3">
+                  <span className="font-semibold text-gray-900">Feriados</span>
+                  <span className="text-gray-600">Plantão WhatsApp</span>
                 </div>
+              </div>
 
-                <Button 
-                  type="submit"
-                  size="lg"
-                  className="w-full bg-green-500 hover:bg-green-600 text-white"
-                >
-                  <Send className="w-5 h-5 mr-2" />
-                  Enviar via WhatsApp
-                </Button>
-              </form>
+              <div className="mt-6 p-4 bg-blue-50 rounded-lg">
+                <p className="text-blue-800 text-sm">
+                  <strong>Atendimento de Emergência:</strong> Para casos urgentes, nosso WhatsApp funciona 24h com resposta em até 2 horas.
+                </p>
+              </div>
             </div>
 
-            {/* Business Info */}
-            <div className="space-y-8">
-              {/* Business Hours */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <Clock className="w-6 h-6 text-blue-600 mr-2" />
-                    Horário de Atendimento
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    {businessHours.map((schedule, index) => (
-                      <div key={index} className="flex justify-between items-center">
-                        <span className="text-gray-700">{schedule.day}</span>
-                        <span className="font-semibold text-blue-600">{schedule.hours}</span>
-                      </div>
-                    ))}
+            {/* Como Atendemos */}
+            <div className="bg-white rounded-xl p-8 shadow-lg">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                Como Atendemos Você
+              </h3>
+              
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Atendimento por telefone, WhatsApp e pelos formulários disponíveis aqui no site</h4>
+                    <p className="text-gray-600 text-sm">Múltiplos canais para sua comodidade</p>
                   </div>
-                  <div className="mt-4 p-3 bg-green-50 rounded-lg">
-                    <p className="text-sm text-green-700">
-                      <CheckCircle className="w-4 h-4 inline mr-1" />
-                      WhatsApp disponível 24h para emergências
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
+                </div>
 
-              {/* FAQ */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Perguntas Frequentes</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    {faqs.map((faq, index) => (
-                      <div key={index}>
-                        <h4 className="font-semibold text-gray-900 mb-2">{faq.question}</h4>
-                        <p className="text-gray-600 text-sm">{faq.answer}</p>
-                        {index < faqs.length - 1 && <hr className="mt-4" />}
-                      </div>
-                    ))}
+                <div className="flex items-start">
+                  <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Orientação gratuita e personalizada</h4>
+                    <p className="text-gray-600 text-sm">Sem custos para receber nossa consultoria especializada</p>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
 
-              {/* Quick Contact */}
-              <Card className="bg-blue-600 text-white">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-4">Precisa de Atendimento Rápido?</h3>
-                  <p className="mb-4">
-                    Para orçamentos urgentes ou dúvidas rápidas, fale diretamente conosco no WhatsApp.
-                  </p>
-                  <Button 
-                    asChild
-                    className="w-full bg-green-500 hover:bg-green-600 text-white"
-                  >
-                    <a href="https://wa.link/8sjwum" target="_blank" rel="noopener noreferrer">
-                      <MessageCircle className="w-5 h-5 mr-2" />
-                      Falar Agora no WhatsApp
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
+                <div className="flex items-start">
+                  <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Indicações de parceiros confiáveis</h4>
+                    <p className="text-gray-600 text-sm">Conectamos você com revendas verificadas em sua região</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Acompanhamento durante todo o processo</h4>
+                    <p className="text-gray-600 text-sm">Suporte contínuo até você encontrar sua van ideal</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Additional Info */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Estamos Aqui para Ajudar
-          </h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-            Nossa equipe especializada está sempre disponível para esclarecer suas dúvidas, 
-            elaborar orçamentos personalizados e orientar na melhor escolha para suas necessidades.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <MessageCircle className="w-8 h-8 text-blue-600" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Resposta Rápida</h3>
-              <p className="text-gray-600">Respondemos todas as mensagens em até 2 horas</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="w-8 h-8 text-blue-600" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Atendimento Especializado</h3>
-              <p className="text-gray-600">Consultores especializados em cada tipo de van</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Phone className="w-8 h-8 text-blue-600" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Suporte Contínuo</h3>
-              <p className="text-gray-600">Acompanhamento durante todo o processo</p>
-            </div>
+      {/* Formulário de Contato */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Envie sua Mensagem
+            </h2>
+            <p className="text-xl text-gray-600">
+              Conte-nos o que você procura e nossa equipe entrará em contato
+            </p>
           </div>
 
-          <p className="text-lg text-gray-700 mb-6">
-            Não deixe para depois! Entre em contato agora e descubra como podemos 
-            ajudar você a encontrar a van perfeita.
-          </p>
-          
-          <Button 
-            asChild
-            size="lg"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold"
-          >
-            <a href="https://wa.link/8sjwum" target="_blank" rel="noopener noreferrer">
-              Iniciar Conversa Agora
-            </a>
-          </Button>
+          <div className="bg-gray-50 rounded-xl p-8">
+            <form className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    Nome Completo *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Seu nome completo"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    WhatsApp *
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="(11) 99999-9999"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    E-mail
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="seu@email.com"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-2">
+                    Cidade/Estado
+                  </label>
+                  <input
+                    type="text"
+                    id="city"
+                    name="city"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="São Paulo/SP"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="van-type" className="block text-sm font-medium text-gray-700 mb-2">
+                  Tipo de Van de Interesse
+                </label>
+                <select
+                  id="van-type"
+                  name="van-type"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                >
+                  <option value="">Selecione o tipo de van</option>
+                  <option value="executiva">Van Executiva</option>
+                  <option value="ambulancia">Ambulância</option>
+                  <option value="motorhome">Van para Motorhome</option>
+                  <option value="trabalho">Van de Trabalho</option>
+                  <option value="outro">Outro</option>
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  Mensagem *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="Conte-nos o que você procura: orçamento, características específicas, prazo, etc."
+                ></textarea>
+              </div>
+
+              <div className="text-center">
+                <a 
+                  href="https://wa.link/8sjwum"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-500 text-white px-8 py-4 rounded-lg hover:bg-green-600 transition-colors font-bold text-lg inline-flex items-center"
+                >
+                  <Phone className="mr-2 h-5 w-5" />
+                  Enviar via WhatsApp
+                </a>
+                <p className="text-sm text-gray-600 mt-4">
+                  Ou preencha o formulário e clique no botão acima para enviar via WhatsApp
+                </p>
+              </div>
+            </form>
+          </div>
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

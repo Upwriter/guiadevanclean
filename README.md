@@ -26,14 +26,6 @@ O **GuiaDeVan** é um site completo para venda de vans executivas, ambulâncias 
 - **WhatsApp Flutuante**: Botão fixo para contato direto via WhatsApp
 - **Navegação Responsiva**: Design adaptável para desktop e mobile
 
-### ✅ Blog Especializado
-- **Sistema de Blog Completo**: Página dedicada com artigos especializados
-- **Busca de Artigos**: Sistema de busca por título, categoria e palavras-chave
-- **5 Artigos Iniciais**: Conteúdo sobre vans executivas seguindo padrões E-E-A-T
-- **Seção do Autor**: Perfil do especialista Abraão Correa
-- **Sidebar Dinâmica**: Posts relacionados e categorias
-- **SEO Otimizado**: Meta tags e estrutura otimizada para cada artigo
-
 ### ✅ Otimizações SEO
 - Meta tags dinâmicas por localização
 - URLs amigáveis e estruturadas
@@ -67,16 +59,12 @@ src/
 │   ├── Home.jsx                # Página inicial
 │   ├── Services.jsx            # Página de serviços
 │   ├── About.jsx               # Página sobre nós
-│   ├── Contact.jsx             # Página de contato
-│   ├── Blog.jsx                # Lista de posts do blog
-│   └── BlogPost.jsx            # Página individual do post
+│   └── Contact.jsx             # Página de contato
 ├── assets/
 │   ├── images/                 # Imagens e ícones
 │   ├── estados_info.json       # Dados dos estados
 │   ├── municipios_por_estado.json # Dados dos municípios
 │   └── municipios_utf8.csv     # Lista completa de municípios
-├── data/
-│   └── blogPosts.js            # Posts do blog e funções de busca
 ├── utils/
 │   └── seo.js                  # Utilitários para SEO
 └── App.jsx                     # Componente principal
@@ -101,8 +89,6 @@ Para alterar o link do WhatsApp, consulte o arquivo `WHATSAPP_LINKS.md` que cont
 - `/servicos` → Página de serviços
 - `/sobrenos` → Página sobre nós
 - `/contato` → Página de contato
-- `/blog` → Lista de posts do blog
-- `/blog/[slug]` → Página individual do post
 
 ### Páginas por Estado (27 estados)
 - `/acre` → Página do Acre
